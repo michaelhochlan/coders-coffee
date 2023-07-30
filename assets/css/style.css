@@ -94,10 +94,6 @@ nav>a:hover {
     color: silver;
 }
 
-li {
-    list-style-type: none;
-}
-
 .bold {
     font-weight: bold;
 }
@@ -132,19 +128,12 @@ img {
     top: -15px;
 }
 
-.vertical-center {
-    position: relative;
-    top: 30%;
-}
-
 .one-third-width-column {
     width: 33.33%;
-    display: inline-block;
 }
 
 .two-thirds-width-column {
     width: 66.66%;
-    display: inline-block;
 }
 
 .reasons-box {
@@ -170,32 +159,12 @@ img {
 }
 
 .contact-boxes-container {
-    width: 66%;
-    margin: 0 auto;
+    height: 270px;
 }
 
-.contact-box-left {
-    width: 250px;
-    margin-top: -20px;
-    float: left;
-}
-
-.contact-box-right {
-    width: 250px;
-    text-align: right;
-    margin-top: -20px;
-    float: right;
-}
-
-.spacer {
-    clear: both;
-}
-
-.contact-box-center {
-    width: 250px;
+.contact-box {
+    flex: 0 250px;
     height: 250px;
-    margin: 0 auto;
-    text-align: center;
 }
 
 th,
@@ -203,8 +172,10 @@ td {
     border-bottom: 1px solid black;
 }
 
-ul {
+ul,
+ol {
     padding: 0;
+    list-style-type: none;
 }
 
 #reasons li {
@@ -257,18 +228,6 @@ input[type=submit] {
     border-radius: 5px;
 }
 
-input[type=reset] {
-
-    margin-top: 20px;
-    margin-left: 0.75rem;
-    padding: 0.75rem;
-    background-color: white;
-    color: #5e361b;
-    border: 1px solid #5e361b;
-    border-radius: 5px;
-}
-
-
 input[type=text],
 input[type=email],
 input[list=coffees] {
@@ -276,6 +235,16 @@ input[list=coffees] {
     width: 90%;
     padding-left: 10px;
     margin: 0 auto;
+}
+
+input[type=reset] {
+    margin-top: 20px;
+    margin-left: 0.75rem;
+    padding: 0.75rem;
+    background-color: white;
+    color: #5e361b;
+    border: 1px solid #5e361b;
+    border-radius: 5px;
 }
 
 /* overrides css above */
@@ -308,14 +277,6 @@ legend {
     margin: 20px 0 10px 0;
 }
 
-.float-left {
-    float: left;
-}
-
-.float-right {
-    float: right;
-}
-
 label {
     margin: 10px 15px 5px 0;
 }
@@ -341,11 +302,37 @@ label {
 #map-wrapper {
 
     height: 300px;
-    margin-bottom: 107px;
+    margin-bottom: 108px;
 }
 
 #map {
     height: 100%;
     width: 100%;
     border: none;
+}
+
+/* FLEXBOX CLASSES */
+
+.flex {
+    display: flex;
+}
+
+.horizontal-center {
+    justify-content: center;
+}
+
+.vertical-center {
+    align-self: center;
+}
+
+.vertical-bottom {
+    align-self: flex-end;
+}
+
+.last {
+    order: 1;
+}
+
+.gap-20 {
+    gap: 20px;
 }
